@@ -9,10 +9,12 @@
 <body>
 	<script>
 		// initialize and setup facebook js sdk
+    var appId;
 		window.fbAsyncInit = function() {
 		    FB.init({
-          appId      : '464477610635000',
+          //appId      : '464477610635000',
           //appId      : '157775784925663',
+          app_id       :  '1300335440067028',
 		      xfbml      : true,
 		      version    : 'v2.12'
 		    });
@@ -37,6 +39,7 @@
 		// login with facebook with extened publish_actions permission
 		function login() {
 			FB.login(function(response) {
+        console.log("appId " +appId);
 				if (response.status === 'connected') {
 		    		document.getElementById('status').innerHTML = 'We are connected.';
 		    		document.getElementById('login').style.visibility = 'hidden';
